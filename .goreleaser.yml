@@ -12,7 +12,8 @@ builds:
     goarch:
       - amd64
 dockers:
-  - image_templates:
+  - dockerfile: "goreleaser.Dockerfile"
+    image_templates:
       - "ghcr.io/rjonczy/goapp:{{ .Tag }}"
     build_flag_templates:
       - "--label=org.opencontainers.image.created={{.Date}}"
